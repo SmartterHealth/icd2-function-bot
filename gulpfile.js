@@ -4,6 +4,7 @@ const path = require('path');
 const sourceMaps = require('gulp-sourcemaps');
 const del = require('del');
 const exec = require('child_process').exec;
+const nodemon = require('gulp-nodemon');
 
 const sourcePaths = [
     "./src/messages/**/*.ts"
@@ -36,8 +37,11 @@ gulp.task("build", gulp.series(["clean", "tsc", "copy"]), (done) => {
 });
 
 gulp.task("serve", (done) => {
-    return exec("npm run start:host", (err, stdout, stderr) => {
-        if(err) { console.log(err)}
-        done();
+    const pckg = require('./package.json');
+    nodemon({
+        script: pckg.main,
+        watch: ["./src/**/*.*"],
+        ext: "ts",
+        tasks: ['build']
     });
 });

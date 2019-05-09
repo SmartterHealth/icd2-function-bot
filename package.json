@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "icd2-function-bot",
   "version": "",
   "scripts": {
     "build": "tsc",
@@ -10,6 +10,7 @@
     "start": "npm-run-all --parallel start:host watch",
     "test": "echo \"No tests yet...\""
   },
+  "main": "./messages/index.js",
   "description": "",
   "devDependencies": {
     "@azure/functions": "^1.0.1-beta1",
@@ -17,8 +18,10 @@
     "@types/node": "^12.0.0",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.4.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^5.0.1",
+    "nodemon": "^1.19.0",
     "npm-run-all": "^4.1.5",
     "restify": "^8.3.2",
     "typescript": "^3.4.5"
