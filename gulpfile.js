@@ -36,8 +36,8 @@ gulp.task("build", gulp.series(["clean", "tsc", "copy"]), (done) => {
 });
 
 gulp.task("serve", (done) => {
-    return exec("func start", (err, stdout, stderr) => {
+    return exec("npm run start:host", (err, stdout, stderr) => {
         if(err) { console.log(err)}
-        done(err);
+        done();
     });
 });
