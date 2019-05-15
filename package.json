@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "botbuilder": "^3.13.1",
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.0.0",
+    "mssql": "^5.1.0"
   }
 }
